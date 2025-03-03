@@ -11,7 +11,7 @@ import ruptures as rpt
 
 
 
-def get_protein_segment_boundaries(emb_dict, max_bkps_per100aa=3):
+def get_protein_segments(emb_dict, max_bkps_per100aa=3):
     """
     Define the boundaries of protein segments using change point analysis.
 
@@ -23,25 +23,29 @@ def get_protein_segment_boundaries(emb_dict, max_bkps_per100aa=3):
     protein_segments: a dictionary of Uniprot protein IDs as keys and a list of boundaries as values
     """
 
-    protein_segment_boundaries = {}
+    protein_segments = {}
 
     # for each protein and embedding
     for protein, emb in emb_dict.items():
-        n_bkps = max(int(emb.shape[0]*max_bkps_per100aa/100),1)
+        n_boundaries = max(int(emb.shape[0]*max_bkps_per100aa/100),1)
 
         # try to get the breakpoints from change point analysis
         try:
             alg = rpt.Window(width=30, model='rbf', jump=1).fit(emb)
             # n_bkps is the maximum number of breakpoints allowed in this protein
-            my_bkps = alg.predict(n_bkps=n_bkps)
+            boundaries = alg.predict(n_bkps=n_boundaries)
+            # convert boundaries to segments
+            my_segments = [[0,boundaries[0]]]
+            my_segments.extend([[boundaries[ii], boundaries[ii+1]] for ii in range(len(boundaries)-1)])
+            my_segments.append([boundaries[-1],emb.shape[0]])
         # this algorithm can fail if the maximum number of breakpoints is unreasonable
         except:
-            print("Failed", protein, "n_bkps", n_bkps)
-            my_bkps = "Failed"
+            print("Failed", protein, "number of boundaries", n_boundaries)
+            my_segments = "Failed"
 
-        protein_segment_boundaries[protein] = my_bkps
+        protein_segments[protein] = my_segments
 
-    return protein_segment_boundaries
+    return protein_segments
 
 
 
