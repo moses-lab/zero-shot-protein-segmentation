@@ -37,7 +37,6 @@ def get_protein_segments(emb_dict, max_bkps_per100aa=3):
             # convert boundaries to segments
             my_segments = [[0,boundaries[0]]]
             my_segments.extend([[boundaries[ii], boundaries[ii+1]] for ii in range(len(boundaries)-1)])
-            my_segments.append([boundaries[-1],emb.shape[0]])
         # this algorithm can fail if the maximum number of breakpoints is unreasonable
         except:
             print("Failed", protein, "number of boundaries", n_boundaries)

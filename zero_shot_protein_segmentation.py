@@ -36,7 +36,8 @@ emb_dict = get_embeddings(seq_path="protein_sequences_demo.fasta", model_dir="",
 
 # change the keys of the dictionary from the whole protein identifier (as seen in fastas)
 # to only the UniProt ID
-for k in emb_dict.keys():
+current_keys = list(emb_dict.keys())
+for k in current_keys:
     new_k = k.split("|")[1]
     emb_dict[new_k] = emb_dict[k]
     del emb_dict[k]

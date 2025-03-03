@@ -19,8 +19,12 @@ How to perform zero-shot protein segmentation using Colab:
 2. From the "open notebook" menu select "GitHub"
 3. Enter github URL: "moses-lab/zero-shot-protein-segmentation/"
 4. Click on the notebook "/zero-shot-protein-segmentation/zero_shot_protein_segmentation_colab.ipynb"
-5. Run blocks of code by clicking on the top left hand corner "play" button (You do not have to run the blocks of code that save the results - some of these generate large data files)
-6. To download saved results from colab to your computer: 
+5. Change your session to use GPU
+    a. Click connect on the top right hand corner
+    b. Select "View Resources" from the drop down menu at the top right hand corner (this will open up a menu on the right side of the colab notebook)
+    c. Click "Change runtime type" and select a GPU option
+6. Run blocks of code by clicking on the top left hand corner "play" button (You do not have to run the blocks of code that save the results - some of these generate large data files)
+7. To download saved results from colab to your computer: 
     a. Click on the file folder icon on the left and you should be able to see your file(s) 
     b. Click on the 3 vertical dots directly to the right of the file name and select "Download"
     c. If the file does not appear immediately, click on the refresh button in the file folder sub menu (just below the "Files")
