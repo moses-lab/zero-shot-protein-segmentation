@@ -17,10 +17,6 @@ import torch
 from transformers import T5EncoderModel, T5Tokenizer
 
 
-# connect to directory with data reader/helper functions
-import sys
-sys.path.append("/home/moseslab/ami/helper_lib/")
-#from data_reader import *
 
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')

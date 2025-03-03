@@ -5,9 +5,7 @@
 How to perform zero-shot protein segmentation locally:
 
 1. Clone this repository to your computer
-2. Install anaconda and do one of the following:
-    a. install dependencies to your current python environment on an as needed basis
-    b. create a new conda environment using zps.yml then activate this environment
+2. Install anaconda, create a new conda environment using zps.yml, and activate this environment (for more detailed instructions see https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 3. open zero_shot_protein_segmentation.py and set your desired options, including if and where to save embeddings
 4. run zero_shot_protein_segmentation.py
 
@@ -29,4 +27,5 @@ How to perform zero-shot protein segmentation using Colab:
     b. Click on the 3 vertical dots directly to the right of the file name and select "Download"
     c. If the file does not appear immediately, click on the refresh button in the file folder sub menu (just below the "Files")
 Note: files generated in this colab session might be deleted from colab when the window is closed.
+Note: you can upload your own fasta sequences to colab in the session or through google drive 
 

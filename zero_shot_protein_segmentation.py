@@ -13,6 +13,9 @@ from functions import *
 
 # options
 
+# path and file name of the fasta file (required)
+fasta_path = "protein_sequences_demo.fasta"
+
 # path and file name for the protein segment boundaries (required)
 seg_bounds_path = "name0.tsv"
 
@@ -30,8 +33,12 @@ seg_emb_path = "name2.hdf5"
 
 
 
+
+
+
+
 # generate ProtT5 embeddings (prot_t5_xl_half_uniref50-enc)
-emb_dict = get_embeddings(seq_path="protein_sequences_demo.fasta", model_dir="", 
+emb_dict = get_embeddings(seq_path=fasta_path, model_dir="", 
                           per_protein=False, max_residues=4000, max_seq_len=4000, max_batch=100)
 
 # change the keys of the dictionary from the whole protein identifier (as seen in fastas)
