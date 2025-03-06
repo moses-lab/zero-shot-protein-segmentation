@@ -29,3 +29,7 @@ How to perform zero-shot protein segmentation using Colab:
 Note: files generated in this colab session might be deleted from colab when the window is closed.
 Note: you can upload your own fasta sequences to colab in the session or through google drive 
 
+
+
+
+Copyright Statement version 2.0 copyright 2025 by Ami Sangster. This software is provided "as is" without warranty of any kind. The author assumes no responsibility for the results it produces or conclusions based thereupon. It is distributed free of charge for academic use only. Permission to copy and use it is granted free of charge provided that no fee is charged and this copyright notice is not removed.
